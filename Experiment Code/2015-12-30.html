@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sentence Judgment Survey</title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="mmturkey.0.5.js"></script> 
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="slide" id="instructions">
+<br>
+<p><b>Sentence Judgment Survey</b></p>
+
+<p class="block-text">In this task, you will help us train an automated system that tries to tell whether English sentences sound like they were produced by a real English speaker. You will see a sequence of 52 sentences and tell us how natural these sentences sound to you. </p>
+
+<p class="block-text">The HIT should take about 5 minutes to complete.</p>
+  
+<button type="button" onclick="experiment.intro()">Start</button>
+<p class="block-text" id="mustaccept">
+You must accept the HIT in order to continue.
+</p>
+  
+	<p class="block-text" id="legal">Legal information: By answering the
+		following questions, you are participating in a study being performed by
+		researchers in the Stanford Department of Linguistics. If you have
+		questions about this research, please contact Phil Crone (<a
+		href="mailto://pcrone@stanford.edu">pcrone@stanford.edu</a>). You must be  at 	
+		least 18 years old to participate. Your participation in this research is
+		voluntary. You may decline to answer any or all of the following questions. You 
+		may decline further participation, at any time, without adverse consequences. Your
+		anonymity is assured; the researchers who have requested your
+		participation will not receive any personal information about you.</p> <BR><BR>
+</div>
+
+<div class="slide" id="intro">
+<br>
+<p><b>Instructions</b></p>
+
+	<p class="block-text" id="blurb1">For each sentence, you should indicate how natural the sentence sounds to you. You will answer using a 7-point scale where 1 means that the statement is completely unnatural and 7 means that the statement is completely natural.</p>
+	
+	<p class="block-text" id="blurb2"> Your answer should reflect what a real English speaker might say, even if it violates certain grammar rules that you learned in school. Try to use the entire scale throughout the task.</p>
+	
+	<p class="block-text" id="blurb3">You will begin by seeing 4 warm-up sentences, for which you will receive feedback. After this, you will see a sequence of 48 sentences, for which you will see no feedback. </p> 
+	
+	<p class="block-text" id="blurb">Click the button below to begin.</p>
+	<img  height='0' width='0' align='center'/>
+	<button type="button" onclick="this.blur(); experiment.next(0);">Continue</button>
+</div>
+
+<div class='slide' id = "sentence_judgment">
+<div class='responseobjects' id = "judgment_response">
+<br>
+<form id='form'>
+<div class='response' id='ratings'>
+	<p class="block-text">Please indicate how natural the following sentence seems to you:</p>
+	<p class="sentence-text" id="sentence"></p>
+    <center>
+    <table class='fixed'>
+    <col width="80px" />
+    <col width="80px" />
+    <col width="80px" />
+    <col width="80px" />
+    <col width="80px" />
+    <col width="80px" />
+    <col width="80px" />
+    <tr>
+    <td align='center'><input class='rating' name='rating' type='radio' id='v1' value='1' /></td>
+    <td align='center'><input class='rating' name='rating' type='radio' id='v2' value='2' /></td> 
+    <td align='center'><input class='rating' name='rating' type='radio' id='v3' value='3' /></td>
+    <td align='center'><input class='rating' name='rating' type='radio' id='v4' value='4' /></td>
+    <td align='center'><input class='rating' name='rating' type='radio' id='v5' value='5' /></td>
+    <td align='center'><input class='rating' name='rating' type='radio' id='v6' value='6' /></td> 
+    <td align='center'><input class='rating' name='rating' type='radio' id='v7' value='7' /></td> 
+    </tr>
+    <tr>
+    <td align='center'>1</td>
+    <td align='center'>2</td>
+    <td align='center'>3</td>
+    <td align='center'>4</td>
+    <td align='center'>5</td>
+    <td align='center'>6</td>
+    <td align='center'>7</td>
+    </tr>
+        <tr>
+    <td align='center'>Completely Unnatural</td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'>Completely Natural</td>
+    </tr>
+	</table>
+	</center>
+	<p></p>
+	<p class='no_answer'>Please answer before continuing.</p><br>
+	<p class='feedback-text' id='feedback'></p><br>
+	<p class='feedback-text' id='click'>Please click the button below to continue.</p><br>
+	</div>
+	</div>
+</form>
+<button class='continue'>Continue</button>
+</div>
+</div>
+
+<div class="slide" id="warm-up">
+	<p>You are now finished with the warm-up questions. You will not receive any feedback for the remainder of this HIT.</p>
+  <p>Please click the button below to continue.</p> 
+  <button class='continue'>Continue</button>
+  </form>
+</div>
+
+
+<!-- FOR RAPHAEL: make a canvas
+<div class='canvas' id='canvas'></div>-->
+
+<div class="slide" id="language">
+	<p>Last question: What is your native language (the language that
+	was spoken at home when you were a child)?</p>
+  <p>Please enter it below, and then click 'Submit'.</p> 
+  <form id="lgform">
+  <input type="text" name="lg" id="lgbox"></input>
+  <button type="button" id="lgsubmit">Submit</button>
+  </form>
+</div>
+
+<div class="slide" id="finished">
+	You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+
+<script type="text/javascript" src="2015-12-30.js"></script></body>
+</html>
